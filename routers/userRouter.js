@@ -90,5 +90,16 @@ router.put("/update/:id", (req, res) => {
     });
 });
 
+router.get('/getall',(req,res) =>{
+    
+  Model.find({})
+  .then((result) => {//
+      res.json(result);
+  }).catch((err) => {
+      console.error(err);
+      res.json(err);
+  });
+}); 
+
 // to find the entry by id and update with formdat
 module.exports = router;
