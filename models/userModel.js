@@ -10,7 +10,7 @@ const schema = new Schema({
     password:String,
     thumbnail:String,
     phone:Number,
-    age:Date,
+    age:Date, 
     teamInfo:Object,
     details:Array,
     createdAt:Date,
