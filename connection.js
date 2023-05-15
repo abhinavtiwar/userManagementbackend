@@ -8,6 +8,6 @@ mongoose.connect(url)
 .then((result) => {    
     console.log("database connected");
 }).catch((err) => {
-    console.error(err); 
+    console.error(err);  
 });
 module.exports=mongoose; 

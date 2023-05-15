@@ -2,12 +2,14 @@ const express = require("express");
 const router = express.Router();
 const Model = require("../models/userModel");
 const bcrypt = require("bcrypt");
+const multer = require('multer');
+const upload = multer().none();
 const salt = bcrypt.genSaltSync(12);
      
-router.post("/add", (req, res) => {
+router.post("/add" , upload, (req, res) => {
   const formdata = req.body;   
   const hash = bcrypt.hashSync(formdata.password, salt);
-  formdata.password = hash; 
+  formdata.password = hash;  
   console.log(req.body); //used to get the data in post
   // res.send("request processed in user router");
 
